@@ -1,7 +1,7 @@
 {
   "center": [
-    28.866577,
-    -2.5425
+    29.857,
+    -1.952
   ],
   "glyphs": "https://watergis.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
   "layers": [
@@ -7264,5 +7264,5 @@
   },
   "sprite": "https://wasac.github.io/naru/sprite/sprite",
   "version": 8,
-  "zoom": 11
+  "zoom": 8
 }
