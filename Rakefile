@@ -47,7 +47,7 @@ namespace :inet do
   
   desc 'clone and build maki, and copy to docs'
   task :sprite do
-    u = "https://github.com/mapbox/maki/zipball/master"
+    u = "https://github.com/mapbox/maki/archive/refs/tags/6.2.0.zip"
     dest = "./src/maki"
     if !File.exist?("#{dest}.zip")
       sh "wget -O #{dest}.zip #{u}"
