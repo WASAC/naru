@@ -2,7 +2,7 @@ version: '3'
 
 services:
   naru:
-    image: wasac/naru:latest
+    image: ghcr.io/watergis/naru:develop
     # build:
     #   dockerfile: Dockerfile
     #   context: .
@@ -10,7 +10,6 @@ services:
     volumes:
       - ./docs:/usr/src/app/docs
       - ./src:/usr/src/app/src
-      - ./Rakefile:/usr/src/app/Rakefile
     environment: 
      - REGION=$REGION
      - AREA=$AREA
