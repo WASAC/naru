@@ -45,7 +45,7 @@ define(["./shared"],(function(t){var e=t.createCommonjsModule((function(t){funct
 return mapboxgl;
 
 })));
-//# sourceMappingURL=mapbox-gl.js.map
+
 });
 
 (() => {

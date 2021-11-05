@@ -3,7 +3,7 @@
     28.866577,
     -2.5425
   ],
-  "glyphs": "https://watergis.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "glyphs": "https://wasac.github.io/naru/glyphs/{fontstack}/{range}.pbf",
   "layers": [
     {
       "id": "background",
@@ -16,249 +16,6 @@
         ]
       },
       "type": "background"
-    },
-    {
-      "filter": [
-        "match",
-        [
-          "geometry-type"
-        ],
-        [
-          "Polygon",
-          "MultiPolygon"
-        ],
-        true,
-        false
-      ],
-      "id": "ne-pg-ocean",
-      "paint": {
-        "fill-color": [
-          "rgb",
-          117,
-          207,
-          240
-        ]
-      },
-      "source": "v",
-      "source-layer": "ocean",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "match",
-        [
-          "geometry-type"
-        ],
-        [
-          "LineString",
-          "MultiLineString"
-        ],
-        true,
-        false
-      ],
-      "id": "ne-ls-coastline",
-      "paint": {
-        "line-color": [
-          "rgb",
-          20,
-          150,
-          255
-        ],
-        "line-width": 2
-      },
-      "source": "v",
-      "source-layer": "coastline",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "match",
-        [
-          "geometry-type"
-        ],
-        [
-          "LineString",
-          "MultiLineString"
-        ],
-        true,
-        false
-      ],
-      "id": "ls-water",
-      "paint": {
-        "line-color": [
-          "match",
-          [
-            "get",
-            "natural"
-          ],
-          "coastline",
-          [
-            "rgb",
-            33,
-            150,
-            243
-          ],
-          [
-            "rgb",
-            187,
-            222,
-            251
-          ]
-        ]
-      },
-      "source": "v",
-      "source-layer": "water",
-      "type": "line"
-    },
-    {
-      "filter": [
-        "match",
-        [
-          "get",
-          "natural"
-        ],
-        "wetland",
-        false,
-        [
-          "match",
-          [
-            "geometry-type"
-          ],
-          [
-            "Polygon",
-            "MultiPolygon"
-          ],
-          true,
-          false
-        ]
-      ],
-      "id": "pg-water",
-      "paint": {
-        "fill-color": [
-          "rgb",
-          187,
-          222,
-          251
-        ]
-      },
-      "source": "v",
-      "source-layer": "water",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "match",
-        [
-          "get",
-          "natural"
-        ],
-        "wetland",
-        [
-          "match",
-          [
-            "geometry-type"
-          ],
-          [
-            "Polygon",
-            "MultiPolygon"
-          ],
-          true,
-          false
-        ],
-        false
-      ],
-      "id": "pg-water-wetland",
-      "paint": {
-        "fill-color": [
-          "rgb",
-          187,
-          222,
-          251
-        ]
-      },
-      "source": "v",
-      "source-layer": "water",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "match",
-        [
-          "geometry-type"
-        ],
-        [
-          "Polygon",
-          "MultiPolygon"
-        ],
-        true,
-        false
-      ],
-      "id": "ne-pg-land",
-      "paint": {
-        "fill-color": [
-          "rgb",
-          212,
-          225,
-          188
-        ],
-        "fill-opacity": [
-          "interpolate",
-          [
-            "exponential",
-            1.5
-          ],
-          [
-            "zoom"
-          ],
-          2,
-          0.3,
-          7,
-          0
-        ]
-      },
-      "source": "v",
-      "source-layer": "land",
-      "type": "fill"
-    },
-    {
-      "filter": [
-        "match",
-        [
-          "geometry-type"
-        ],
-        [
-          "Polygon",
-          "MultiPolygon"
-        ],
-        true,
-        false
-      ],
-      "id": "ne-pg-snow",
-      "paint": {
-        "fill-color": [
-          "rgb",
-          255,
-          255,
-          255
-        ],
-        "fill-opacity": [
-          "interpolate",
-          [
-            "exponential",
-            1.5
-          ],
-          [
-            "zoom"
-          ],
-          2,
-          0.3,
-          7,
-          0
-        ]
-      },
-      "source": "v",
-      "source-layer": "snow",
-      "type": "fill"
     },
     {
       "filter": [
@@ -551,28 +308,111 @@
       "filter": [
         "match",
         [
+          "get",
+          "natural"
+        ],
+        "wetland",
+        [
+          "match",
+          [
+            "geometry-type"
+          ],
+          [
+            "Polygon",
+            "MultiPolygon"
+          ],
+          true,
+          false
+        ],
+        false
+      ],
+      "id": "pg-water-wetland",
+      "paint": {
+        "fill-color": [
+          "rgb",
+          227,
+          242,
+          253
+        ]
+      },
+      "source": "v",
+      "source-layer": "water",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "match",
+        [
           "geometry-type"
         ],
         [
-          "Polygon",
-          "MultiPolygon"
+          "LineString",
+          "MultiLineString"
         ],
         true,
         false
       ],
-      "id": "ne-ls-country",
+      "id": "ls-water",
       "paint": {
         "line-color": [
-          "rgb",
-          92,
-          99,
-          102
-        ],
-        "line-width": 1
+          "match",
+          [
+            "get",
+            "natural"
+          ],
+          "coastline",
+          [
+            "rgb",
+            33,
+            150,
+            243
+          ],
+          [
+            "rgb",
+            187,
+            222,
+            251
+          ]
+        ]
       },
       "source": "v",
-      "source-layer": "country",
+      "source-layer": "water",
       "type": "line"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "natural"
+        ],
+        "wetland",
+        false,
+        [
+          "match",
+          [
+            "geometry-type"
+          ],
+          [
+            "Polygon",
+            "MultiPolygon"
+          ],
+          true,
+          false
+        ]
+      ],
+      "id": "pg-water",
+      "paint": {
+        "fill-color": [
+          "rgb",
+          187,
+          222,
+          251
+        ]
+      },
+      "source": "v",
+      "source-layer": "water",
+      "type": "fill"
     },
     {
       "filter": [
@@ -6365,106 +6205,6 @@
       "type": "line"
     },
     {
-      "id": "ne-pt-country",
-      "layout": {
-        "text-field": [
-          "get",
-          "name"
-        ],
-        "text-font": [
-          "Roboto Regular"
-        ],
-        "text-size": 13
-      },
-      "paint": {
-        "text-color": [
-          "rgb",
-          0,
-          0,
-          0
-        ],
-        "text-halo-color": [
-          "rgb",
-          238,
-          238,
-          238
-        ],
-        "text-halo-width": 1
-      },
-      "source": "v",
-      "source-layer": "country_annotation",
-      "type": "symbol"
-    },
-    {
-      "filter": [
-        "match",
-        [
-          "geometry-type"
-        ],
-        [
-          "Point",
-          "MultiPoint"
-        ],
-        true,
-        false
-      ],
-      "id": "ne-pt-place",
-      "layout": {
-        "icon-image": [
-          "match",
-          [
-            "get",
-            "place"
-          ],
-          "airports",
-          "airport",
-          "ports",
-          "ferry_terminal",
-          "mountains",
-          "refugee",
-          "city",
-          "national_capital",
-          "default"
-        ],
-        "icon-size": 1,
-        "text-field": [
-          "get",
-          "name"
-        ],
-        "text-font": [
-          "Roboto Regular"
-        ],
-        "text-justify": "auto",
-        "text-radial-offset": 1,
-        "text-size": 10,
-        "text-variable-anchor": [
-          "top",
-          "bottom",
-          "left",
-          "right"
-        ]
-      },
-      "maxzoom": 6,
-      "paint": {
-        "text-color": [
-          "rgb",
-          0,
-          0,
-          0
-        ],
-        "text-halo-color": [
-          "rgb",
-          238,
-          238,
-          238
-        ],
-        "text-halo-width": 1
-      },
-      "source": "v",
-      "source-layer": "place",
-      "type": "symbol"
-    },
-    {
       "filter": [
         "match",
         [
@@ -6588,7 +6328,7 @@
           ]
         ],
         "text-font": [
-          "Roboto Regular"
+          "Open Sans Regular"
         ],
         "text-offset": [
           0,
@@ -6659,7 +6399,7 @@
           ]
         ],
         "text-font": [
-          "Roboto Regular"
+          "Open Sans Regular"
         ],
         "text-offset": [
           0,
@@ -6789,7 +6529,7 @@
         "symbol-placement": "line",
         "text-field": "{name}",
         "text-font": [
-          "Roboto Regular"
+          "Open Sans Regular"
         ],
         "text-offset": [
           "step",
@@ -7130,7 +6870,7 @@
           ]
         ],
         "text-font": [
-          "Roboto Regular"
+          "Open Sans Regular"
         ],
         "text-offset": [
           "step",
@@ -7205,7 +6945,6 @@
           10
         ]
       },
-      "minzoom": 7,
       "paint": {
         "text-color": [
           "rgb",
