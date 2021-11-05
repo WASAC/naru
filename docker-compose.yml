@@ -10,6 +10,7 @@ services:
     volumes:
       - ./docs:/usr/src/app/docs
       - ./src:/usr/src/app/src
+      - ./entrypoint.sh:/usr/src/app/entrypoint.sh
     environment: 
      - REGION=$REGION
      - AREA=$AREA
