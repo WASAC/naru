@@ -20,7 +20,7 @@ jobs:
         AREA: rwanda
         SITE_ROOT: https://wasac.github.io/naru
       run: |
-        docker-compose up
+        docker compose up
     - name: Use Node.js
       uses: actions/setup-node@v1
       with:
